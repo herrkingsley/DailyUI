@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&family=Raleway:wght@400;500;600&display=swap');
+
+/* 
+font-family: 'Lato', sans-serif;
+font-family: 'Raleway', sans-serif;
+
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: black;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+}
+
+h1, h2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+h1 {
+    font-size: 4.125em;
+    text-transform: uppercase;
+}
+h2 {
+    font-size: 1.375em;
+
+}
+
+.wrapper {
+    margin: 0 auto;
+    padding-top: 1px;
+    max-width: 400px;
+    height: 100vh;
+    /* Credit: Photo by Matteo Catanese on Unsplash */
+    background-image: 
+    linear-gradient(rgba(0,11,13,.4), rgba(0,45,56,1)),
+    url("img/matteo-catanese-4KrQq8Z6Y5c-500x750.jpg");
+    background-position: center;
+    background-size: 150%;
+}
+
+header {
+
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+    margin-top: 120px;
+    margin-bottom: 40px;
+    text-align: center;
+
+}
+
+.main {
+    padding: 0 15%;
+}
+
+.sign-up-form {
+    display: flex;
+    flex-direction: column;
+}
+.sign-up-form label { 
+    position: relative;
+    padding-left: 5px;
+    margin-bottom: .8em;
+    /* animation */
+    width: auto;
+    opacity: 1;
+}
+.right::after,
+.wrong::after {
+    position: absolute;
+    top: 45px;
+    right: 20px;
+    font-size: 1.5;
+    font-weight: 800;
+    
+}
+.wrong::after {
+    content: "\2716";
+    color: tomato;
+}
+.right::after {
+    content: "\2714";
+    color: chartreuse;
+}
+
+input[type=text],
+input[type=number] {
+    align-self: center;
+    box-sizing: border-box;
+    height: 46px;
+    border-radius: 23px;
+    background-color: rgba(255,255,255,.3);
+    padding: 0 25px;
+    margin-bottom: 30px;
+    border: none;
+    font-size: 1em;
+    color: white;
+    /* animation */
+    width: 100%;
+}
+
+input[type=text]:focus,
+input[type=text]:active,
+input[type=number]:focus,
+input[type=number]:active {
+    border: 2px solid #2EC4B6;
+    outline: none;
+}
+input[type=number] {
+    margin-bottom: 65px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+.btn,
+.submit-btn {
+    border: none;
+    background-color: #2EC4B6;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    border-radius: 28px;
+}
+
+.submit-btn{
+    position: relative;
+    align-self: center;
+    height: 56px;
+    width: 225px;
+    font-size: 1.2em;
+}
+
+.btn {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    width:120px;
+    height: 40px;
+    font-size: .8em;
+    font-weight: 800;
+    align-self: center;
+}
+
+
+.btn:focus,
+.btn:active,
+.btn:hover {
+        border: 2px solid white;
+        outline: none;
+}
+
+.submit-btn:focus,
+.submit-btn:active,
+.submit-btn:hover {
+    /* border: 2px solid white; */
+    outline: none;
+}
+
+.sucsess {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    transform: translate(-50%, -100vh);
+    width: 60%;
+    background-color: lightgray;
+    padding: 20px 30px;
+    color: black;
+}
+
+.sucsess__titel {
+    text-align: center;
+    line-height: 2em;
+    margin-bottom: 10px;
+}
+
+.sucsess__desc {
+    line-height: 1.5em;
+}
+
+
+/* Elements to animate */
+
+
+.letter {
+    animation: letter .3s ease-in forwards,
+                letterFly .8s 3.2s cubic-bezier(.55,-0.35,.85,.9) forwards;
+}
+
+.fade {
+    opacity: 1;
+    animation: fade .3s .3s ease-out forwards;
+}
+
+.shrink1 {
+    animation: shrink .2s .6s ease-out forwards,
+                drop1 .4s 1s cubic-bezier(.21,-0.51,.77,.84) forwards;
+}
+
+.shrink2 {
+    animation: shrink .2s .9s ease-out forwards,
+                drop2 .4s 1.5s cubic-bezier(.21,-0.51,.77,.84) forwards;
+}
+
+.shrink3 {
+    animation: shrink .2s 1.2s ease-out forwards,
+                drop3 .4s 1.9s cubic-bezier(.1,-0.51,.77,.84) forwards;
+}
+
+.letter::before {
+    content: url("img/envelope_1.svg");
+    position: absolute;
+    display: block;
+    height: 65px;
+    width: 102px;
+    top: -32px;
+    transform:rotateX(90deg);
+    opacity: 1;
+    animation: letterClose1 .6s 2.5s ease forwards;
+}
+
+.fade__header {
+    animation: fade .6s 2.8s ease-out forwards;
+}
+
+.drop-down {
+    animation: dropDown .6s 4.7s ease both;
+}
+
+
+/* keyframes */
+
+@keyframes fade{
+    from{ opacity: 1 }
+    to{ opacity: 0 }
+}
+@keyframes letter{
+    from{ width: 225px; border-radius: 28px; color: white }
+    to{ width: 102px; border-radius: 3px; color: transparent }
+}
+
+@keyframes shrink {
+    from{with: auto}
+    to{width: 46px}
+}
+
+@keyframes drop1 {
+    from{transform: translateY(0px); opacity: 1}
+    to{transform: translateY(115px); opacity: 0}
+}
+@keyframes drop2 {
+    from{transform: translateY(0px); opacity: 1}
+    to{transform: translateY(220px); opacity: 0}
+}
+@keyframes drop3 {
+    from{transform: translateY(0px); opacity: 1}
+    to{transform: translateY(330px); opacity: 0}
+}
+
+@keyframes letterClose1 {
+    0%{transform:rotateX(90deg)}
+    50%{transform:rotateX(0deg)}
+    100%{transform:rotateX(180deg)}
+
+    /* from{transform:rotateX(90deg)}
+    to{transform:rotateX(0deg)} */
+}
+
+@keyframes letterFly {
+    0%{transform:  translate(0px, 0px)}
+    100%{transform: rotateZ(20deg) translate(150px, -730px); opacity: 0;}
+}
+
+@keyframes dropDown {
+    from{transform: translate(-50%, -100vh)}
+    to{transform: translate(-50%, -50%)}
+}

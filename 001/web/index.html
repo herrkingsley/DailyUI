@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Daily UI 001</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header id="header" class="">
+            <h2 class="desc">Trekking</h2>
+            <h1 class="title">Sign Up</h1>
+        </header>
+        <div class="main">
+            <form action="" class="sign-up-form">
+                <label id="labelName" class="" for="name">name</label>
+                <input type="text" class="" id="name" autocomplete="no">
+                <label id="labelEmail" class="" for="email">e-mail adress</label>
+                <input type="text" class="" id="email" autocomplete="no">
+                <label id="labelTel" class="" for="phone">phone number</label>
+                <input type="number" class="" id="phone" autocomplete="off">
+                
+
+                <button type="button" id="submitBtn" class="submit-btn "><span class="">Submit</span></button>
+            </form>
+        </div>
+        <div id="signedUp" class="sucsess drop-downX">
+            <h2 class="sucsess__titel">Success</h2>
+            <p class="sucsess__desc"><strong>Hi <span id="descName">Name</span>!</strong><br>
+                You have now been registered to our trekking tour. <br> We will send you confirmation e-mail to <strong><span id="descEmail">place@holder.com</span></strong>.
+            <br><br>Have a great day!</p>
+            <button class="btn" onclick="location.reload()">OK, got it!</button>
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
