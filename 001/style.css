@@ -183,6 +183,7 @@ input[type=number] {
     left: 50%;
     border-radius: 10px;
     transform: translate(-50%, -200vh);
+    max-width: 300px;
     width: 60%;
     background-color: lightgray;
     padding: 20px 30px;
