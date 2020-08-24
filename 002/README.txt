@@ -1,1 +1,3 @@
-Design and research - 4h
+Design and research
+Time: 4h
+Software: Adobe XD, Photoshop, Illustrator
