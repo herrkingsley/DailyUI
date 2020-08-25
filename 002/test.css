@@ -94,10 +94,10 @@
     overflow: hidden;
   }
   body {
-    display: flex;
+    /* display: flex;
     align-items: center;
     justify-content: center;
 
     background: linear-gradient(to bottom, #74abe2, #5563de);
-    font-family: "Ropa Sans", sans-serif;
+    font-family: "Ropa Sans", sans-serif; */
   }
