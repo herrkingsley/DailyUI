@@ -57,9 +57,10 @@ body {
 }
 
 .checkout__body {
-  height: 100%;
-  -webkit-transition: height 500ms;
-  transition: height 500ms;
+  overflow: hidden;
+  max-height: 100vh;
+  -webkit-transition: max-height .3s ease-out;
+  transition: max-height .3s ease-out;
 }
 
 .checkout__body__header {
@@ -80,8 +81,12 @@ body {
   padding: 30px 20px;
 }
 
+.checkout .top-shadow {
+  -webkit-box-shadow: 0px -3px 6px 0px rgba(54, 54, 54, 0.4);
+          box-shadow: 0px -3px 6px 0px rgba(54, 54, 54, 0.4);
+}
+
 .checkout .collaps {
-  height: 2px;
-  overflow: hidden;
+  max-height: 0px;
 }
 /*# sourceMappingURL=style.css.map */
