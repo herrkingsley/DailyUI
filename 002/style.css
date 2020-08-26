@@ -17,6 +17,118 @@ body {
   color: #3E3C41;
 }
 
+a {
+  color: #3E3C41;
+}
+
+a:hover {
+  opacity: .6;
+}
+
+a:visited {
+  color: #3E3C41;
+}
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 30px;
+}
+
+.slider__btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.slider__btns__header {
+  margin-bottom: 15px;
+  font-size: .8rem;
+}
+
+.slider__btns a {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.slider__btns__list__btn {
+  margin-right: 10px;
+}
+
+.slider__slides {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: auto;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.slider__slides div {
+  scroll-snap-align: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 70%;
+  position: relative;
+  margin-right: 5%;
+  border-radius: 10px;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 100px;
+}
+
+.slider__slides div:before {
+  content: '';
+  display: block;
+  padding-top: 70%;
+}
+
+.slider__slides div:first-child {
+  margin-left: 50%;
+}
+
+.mastercard-bg {
+  background: radial-gradient(at bottom left, #A293F6 20%, #DC98F6 100%);
+}
+
+.visa-bg {
+  background: radial-gradient(at bottom left, #F07CC4 20%, #FF2A6B 100%);
+}
+
+.amex-bg {
+  background: radial-gradient(at bottom left, #f5663b 20%, #f6d757 100%);
+}
+
 .wrapper {
   margin-left: auto;
   margin-right: auto;
@@ -172,7 +284,7 @@ body {
   cursor: pointer;
 }
 
-.checkout .activeB {
+.checkout .active {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 4px;

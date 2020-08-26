@@ -9,11 +9,13 @@ toggelTab.forEach(element => {
 
 
 //Add active class to credit card buttons
-var cardBtns = document.querySelectorAll(".active-btns__btn");
+var cardBtns = document.querySelectorAll(".slider__btns__list__btn");
 for (var i = 0; i < cardBtns.length; i++) {
+    
       cardBtns[i].addEventListener("click", function() {
-      var current = document.getElementsByClassName("activeB");
-      current[0].className = current[0].className.replace(" activeB", "");
-      this.className += " activeB";
+        console.log("click");
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      this.className += " active";
       });
     }

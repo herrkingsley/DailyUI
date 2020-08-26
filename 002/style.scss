@@ -12,6 +12,11 @@
     list-style-type: none;
 }
 
+@mixin clean-link {
+    text-decoration: none;
+    color: inherit;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -26,6 +31,19 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: #3E3C41;
 }
+a{
+    color: #3E3C41;
+}
+
+a:hover {
+    opacity: .6;
+}
+a:visited {
+    color: #3E3C41;
+}
+
+
+@import "_slides";
 
 .wrapper {
     margin-left: auto;
@@ -142,11 +160,13 @@ body {
 
     }
 
+
+
    
 
     /*--------------- single purpose --------------*/
 
-    .activeB {
+    .active {
         box-sizing: border-box;
         padding: 4px;
         border: solid 2px #68BEC0;

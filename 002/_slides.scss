@@ -1,0 +1,86 @@
+@mixin responsive-box($height){
+    position: relative;
+    &:before{
+      content: '';
+      display: block;
+      padding-top: $height;
+    }
+  }
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 30px;
+
+    &__btns {
+        @include center-row;
+        flex-direction: column;
+        margin-bottom: 30px;
+        
+
+     &__header {
+        margin-bottom: 15px;
+        font-size: .8rem;
+     }
+     a {
+        font-size: 2rem;
+        cursor: pointer;
+     }
+
+
+     &__list {
+        
+        &__btn {
+            margin-right: 10px;
+        }
+     }
+    } // end btns
+
+    &__slides {
+
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        padding-top: 10px;
+        padding-bottom: 20px;
+
+        div {
+            scroll-snap-align: center;
+            flex-shrink: 0;
+            width: 70%;
+            @include responsive-box(70%);
+            margin-right: 5%;
+            border-radius: 10px;
+            // background: #eee;
+            transform-origin: center center;
+            transform: scale(1);
+            transition: transform 0.5s;
+            position: relative;
+        
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 100px;
+        }
+
+        div:first-child {
+            margin-left: 50%;
+        }
+    }
+
+}
+
+.mastercard-bg {
+background: radial-gradient(at bottom left, #A293F6 20%, #DC98F6 100%);
+}
+
+.visa-bg {
+    background: radial-gradient(at bottom left, #F07CC4 20%, #FF2A6B 100%);
+}
+
+.amex-bg {
+    background: radial-gradient(at bottom left, #f5663b 20%, #f6d757 100%);
+    }
+
+    
