@@ -46,6 +46,7 @@
         padding-bottom: 20px;
 
         div {
+            
             scroll-snap-align: center;
             flex-shrink: 0;
             width: 70%;
@@ -61,7 +62,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 100px;
+            color: white;
+            font-size: 5rem;
         }
 
         div:first-child {
