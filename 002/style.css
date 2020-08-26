@@ -130,6 +130,56 @@ body {
   text-transform: uppercase;
 }
 
+.checkout .active-btns {
+  margin-bottom: 30px;
+}
+
+.checkout .active-btns__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 15px;
+}
+
+.checkout .active-btns__header p {
+  font-size: 12px;
+}
+
+.checkout .active-btns__list {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style-type: none;
+}
+
+.checkout .active-btns__btn {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.checkout .activeB {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 4px;
+  border: solid 2px #68BEC0;
+  border-radius: 10px;
+}
+
 .checkout .top-shadow {
   -webkit-box-shadow: 0px -3px 6px 0px rgba(54, 54, 54, 0.4);
           box-shadow: 0px -3px 6px 0px rgba(54, 54, 54, 0.4);
