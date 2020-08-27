@@ -167,18 +167,27 @@ a:visited {
     
     background: rgba(229,244,245,.5);
     backdrop-filter: blur(5px);
+    
+
 
     &__card {
         position: relative;
         top: 120px;
         left: 50%;
         transform: translateX(-50%);
-        width: 80%;
-        padding: 20px;
+        width: 90%;
+        padding: 25px;
         // @include responsive-box(60%);
         border-radius: 10px;
         background: radial-gradient(at bottom left, #F07CC4 20%, #FF2A6B 100%);
         box-shadow: 3px 3px 15px rgba(0,0,0,0.6);
+
+        &__close-btn {
+            position: relative;
+            top: calc(-60px - 1rem);
+            text-align: right;
+            font-size: 2rem;
+        }
 
         &__brand {
             position: absolute;
@@ -239,19 +248,23 @@ a:visited {
 
     &__input:nth-child(6) {
         width: 30%;
+        order: 3;
     
     }
     &__name:nth-child(5){
         width: 30%;
+        order: 1;
     
     }
 
     &__input:nth-child(8) {
         width: 60%;
+        order: 4;
     
     }
     &__name:nth-child(7){
         width: 60%;
+        order: 2;
     
     }
 
@@ -261,6 +274,17 @@ a:visited {
     color: $base-color-50;
     font-weight: 600;
   }
+
+  input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 
     /*--------------- single purpose --------------*/
 
