@@ -246,6 +246,7 @@ a:visited {
 }
 
 .checkout__body__container {
+  position: relative;
   padding: 30px 20px;
 }
 
@@ -256,12 +257,15 @@ a:visited {
 .checkout .pay-btn__btn {
   display: block;
   margin: 0 auto 30px;
+  padding-top: 2px;
   height: 50px;
   width: 205px;
   border-radius: 25px;
   border: none;
   color: #3E3C41;
-  font-size: .875rem;
+  color: #222222;
+  font-size: .9rem;
+  font-weight: 500;
   text-transform: uppercase;
   background: -webkit-gradient(linear, left top, right top, from(#65BBBE), to(#8DE3D4));
   background: linear-gradient(to right, #65BBBE, #8DE3D4);
@@ -273,8 +277,7 @@ a:visited {
 
 .checkout .pay-btn__btn__price {
   font-weight: 600;
-  float: right;
-  margin-right: 30px;
+  margin-left: 20px;
 }
 
 .checkout .pay-btn__btn:hover {
@@ -286,6 +289,123 @@ a:visited {
 .checkout .pay-btn__btn:active {
   -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
           box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.checkout .popUp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: block;
+  background: rgba(229, 244, 245, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.checkout .popUp__card {
+  position: relative;
+  top: 120px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 80%;
+  padding: 20px;
+  border-radius: 10px;
+  background: radial-gradient(at bottom left, #F07CC4 20%, #FF2A6B 100%);
+  -webkit-box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.6);
+          box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.6);
+}
+
+.checkout .popUp__card__brand {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 3rem;
+  color: white;
+}
+
+.checkout .popUp__card__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.checkout .card-form__name {
+  font-size: .7rem;
+  font-weight: 500;
+  color: #3E3C41;
+  margin-bottom: 2px;
+}
+
+.checkout .card-form__input {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3E3C41;
+  background: none;
+  border: none;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.5);
+  outline: none;
+  padding: 5px;
+}
+
+.checkout .card-form__input:focus {
+  background: rgba(255, 255, 255, 0.171);
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.5);
+}
+
+.checkout .card-form__input:nth-child(2) {
+  margin-bottom: 30px;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  margin-right: 30%;
+}
+
+.checkout .card-form__input:nth-child(4) {
+  margin-bottom: 20px;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+.checkout .card-form__input:nth-child(6) {
+  width: 30%;
+}
+
+.checkout .card-form__name:nth-child(5) {
+  width: 30%;
+}
+
+.checkout .card-form__input:nth-child(8) {
+  width: 60%;
+}
+
+.checkout .card-form__name:nth-child(7) {
+  width: 60%;
+}
+
+.checkout ::-webkit-input-placeholder {
+  color: #3e3c4188;
+  font-weight: 600;
+}
+
+.checkout :-ms-input-placeholder {
+  color: #3e3c4188;
+  font-weight: 600;
+}
+
+.checkout ::-ms-input-placeholder {
+  color: #3e3c4188;
+  font-weight: 600;
+}
+
+.checkout ::placeholder {
+  color: #3e3c4188;
+  font-weight: 600;
 }
 
 .checkout .top-shadow {
