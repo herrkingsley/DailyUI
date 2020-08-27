@@ -62,6 +62,12 @@ a:visited {
   cursor: pointer;
 }
 
+.slider__btns i {
+  -webkit-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.4);
+          box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.4);
+  line-height: 1.8rem;
+}
+
 .slider__btns__list__btn {
   margin-right: 10px;
 }
@@ -75,7 +81,8 @@ a:visited {
       scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   padding-top: 10px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .slider__slides div {
@@ -106,6 +113,8 @@ a:visited {
           align-items: center;
   color: white;
   font-size: 5rem;
+  -webkit-box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
 }
 
 .slider__slides div:before {
@@ -116,6 +125,20 @@ a:visited {
 
 .slider__slides div:first-child {
   margin-left: 50%;
+}
+
+.slider__slides::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.slider__slides::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+
+.slider__slides::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .mastercard-bg {
@@ -130,12 +153,20 @@ a:visited {
   background: radial-gradient(at bottom left, #f5663b 20%, #f6d757 100%);
 }
 
+.active {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 4px;
+  border: solid 2px #68BEC0;
+  border-radius: 10px;
+}
+
 .wrapper {
   margin-left: auto;
   margin-right: auto;
   max-width: 425px;
-  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
-          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 .checkout {
@@ -218,79 +249,43 @@ a:visited {
   padding: 30px 20px;
 }
 
-.checkout .pay-choice {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.checkout .pay-btn {
+  width: 100%;
 }
 
-.checkout .pay-choice .fa-circle {
-  color: #d1d1d1;
-}
-
-.checkout .pay-choice__text {
-  margin-top: .5rem;
-  font-size: .75rem;
+.checkout .pay-btn__btn {
+  display: block;
+  margin: 0 auto 30px;
+  height: 50px;
+  width: 205px;
+  border-radius: 25px;
+  border: none;
+  color: #3E3C41;
+  font-size: .875rem;
   text-transform: uppercase;
-}
-
-.checkout .active-btns {
-  margin-bottom: 30px;
-}
-
-.checkout .active-btns__header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  justify-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 15px;
-}
-
-.checkout .active-btns__header p {
-  font-size: 12px;
-}
-
-.checkout .active-btns__list {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 200px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  justify-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  list-style-type: none;
-}
-
-.checkout .active-btns__btn {
-  font-size: 2rem;
+  background: -webkit-gradient(linear, left top, right top, from(#65BBBE), to(#8DE3D4));
+  background: linear-gradient(to right, #65BBBE, #8DE3D4);
+  -webkit-box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+          box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+  outline: none;
   cursor: pointer;
 }
 
-.checkout .active {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 4px;
-  border: solid 2px #68BEC0;
-  border-radius: 10px;
+.checkout .pay-btn__btn__price {
+  font-weight: 600;
+  float: right;
+  margin-right: 30px;
+}
+
+.checkout .pay-btn__btn:hover {
+  color: white;
+  background: -webkit-gradient(linear, left top, right top, from(#65be87), to(#90e38d));
+  background: linear-gradient(to right, #65be87, #90e38d);
+}
+
+.checkout .pay-btn__btn:active {
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .checkout .top-shadow {

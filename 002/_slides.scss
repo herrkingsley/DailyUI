@@ -25,6 +25,14 @@
      a {
         font-size: 2rem;
         cursor: pointer;
+        
+        
+     }
+
+     i {
+        box-shadow: 3px 3px 7px rgba(0,0,0,0.4);
+        line-height: 1.8rem;
+        
      }
 
 
@@ -32,6 +40,7 @@
         
         &__btn {
             margin-right: 10px;
+            
         }
      }
     } // end btns
@@ -39,11 +48,12 @@
     &__slides {
 
         display: flex;
-        overflow-x: auto;
+        overflow-x:auto;
         scroll-snap-type: x mandatory;
         scroll-behavior: smooth;
         padding-top: 10px;
-        padding-bottom: 20px;
+        padding-bottom: 40px; // to add space to scrollbar
+        margin-bottom: 30px;
 
         div {
             
@@ -64,14 +74,31 @@
             align-items: center;
             color: white;
             font-size: 5rem;
+            box-shadow: 0px 6px 10px rgba(0,0,0,0.2);
         }
 
         div:first-child {
             margin-left: 50%;
         }
-    }
 
+ 
+    }
 }
+
+.slider__slides::-webkit-scrollbar {
+    width: 10px; 
+    height: 10px;
+
+  }
+.slider__slides::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.4);
+    border-radius: 10px;
+  }
+.slider__slides::-webkit-scrollbar-track {
+    background:  rgba(0,0,0,0.1);
+  }
+
+
 
 .mastercard-bg {
 background: radial-gradient(at bottom left, #A293F6 20%, #DC98F6 100%);
@@ -83,6 +110,15 @@ background: radial-gradient(at bottom left, #A293F6 20%, #DC98F6 100%);
 
 .amex-bg {
     background: radial-gradient(at bottom left, #f5663b 20%, #f6d757 100%);
+    }
+
+
+
+    .active {
+        box-sizing: border-box;
+        padding: 4px;
+        border: solid 2px #68BEC0;
+        border-radius: 10px;
     }
 
     
