@@ -40,7 +40,7 @@ cardNumber.addEventListener('keydown', function(event) {
     
   });
 
-
+// Validating the input
 function validateName(cardName) 
     {
         var re = /\S+ \S+/;
@@ -48,11 +48,15 @@ function validateName(cardName)
     }
 
 validateNumber = () => {
-    return cardNumber.value.length == 16;
+    return cardNumber.value.length == 19;
     }
 
-validateNumber = () => {
-    return cardNumber.value.length == 16;
+validateDate = () => {
+    return cardDate.value.length == 7;
+    }
+    
+validateCVC = () => {
+    return cardCVC.value.length == 4;
     }
     
 
@@ -63,11 +67,30 @@ validateNumber = () => {
 //         return re.test(email.value);
 //     }
 
-function validateForm(boolean){
+// validating the whole form
+
+function checkForm(){
+    const check = [];
+    check.push( markInput(validateName(cardName)) );
+    check.push( markInput(validateNumber()) );
+    check.push( markInput(validateDate()) );
+    check.push( markInput(validateCVC()) );
+    
+    if(check.indexOf(false) < 0){
+        console.log("All is great")
+    } else {
+        console.log("no go")
+    }
+   
+}
+
+function markInput(boolean){
     if(boolean){
-        console.log("this is true");
+        // console.log("this is true");
+        return true;
     }else {
-        console.log("this is NOT true");
+        // console.log("this is NOT true");
+        return false;
     }
 }
 
