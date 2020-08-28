@@ -292,6 +292,17 @@ a:visited {
           box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
+.checkout .btn-inactive {
+  cursor: not-allowed;
+  background: gray;
+  opacity: .6;
+}
+
+.checkout .btn-inactive:hover {
+  background: gray;
+  color: tomato;
+}
+
 .checkout .popUp {
   position: absolute;
   top: 0;
@@ -313,16 +324,22 @@ a:visited {
   width: 90%;
   padding: 25px;
   border-radius: 10px;
-  background: radial-gradient(at bottom left, #F07CC4 20%, #FF2A6B 100%);
   -webkit-box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.6);
           box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.6);
 }
 
 .checkout .popUp__card__close-btn {
-  position: relative;
-  top: calc(-60px - 1rem);
-  text-align: right;
+  position: absolute;
+  display: inline-block;
+  top: 70px;
+  right: 20px;
   font-size: 2rem;
+  cursor: pointer;
+}
+
+.checkout .popUp__card__close-btn:hover {
+  color: tomato;
+  opacity: .9;
 }
 
 .checkout .popUp__card__brand {
@@ -342,6 +359,10 @@ a:visited {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.checkout .popUp-close {
+  display: none;
 }
 
 .checkout .card-form__name {
@@ -406,6 +427,15 @@ a:visited {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
+}
+
+.checkout .card-form__submit-card {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  margin-top: 30px;
 }
 
 .checkout ::-webkit-input-placeholder {

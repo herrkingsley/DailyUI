@@ -78,13 +78,13 @@
                 </div>
                 </section>
                 <section id="scroll" class="slider__slides">
-                  <div id="slide-1" class="mastercard-bg" onclick="alert('hello')">
+                  <div id="slide-1" class="cc-card mastercard-bg">
                     <i class="fab fa-cc-mastercard"></i>
                   </div>
-                  <div id="slide-2" class="visa-bg" onclick="alert('hello')">
+                  <div id="slide-2" class="cc-card visa-bg">
                     <i class="fab fa-cc-visa"></i>
                   </div>
-                  <div id="slide-3" class="amex-bg" onclick="alert('hello')">
+                  <div id="slide-3" class="cc-card amex-bg">
                     <i class="fab fa-cc-amex"></i>
                   </div>
                 </section>
@@ -95,14 +95,15 @@
               </section> <!-- End Slider -->
               
               <section class="pay-btn">
-                <button class="pay-btn__btn">Pay secure<span class="pay-btn__btn__price">$875</span></button>
+                <button id="payBtn" class="pay-btn__btn btn-inactive">Pay secure<span class="pay-btn__btn__price">$875</span></button>
               </section>
 
-              <div id="popUphej" class="popUp">
+              <div id="popUp" class="popUp popUp-close">
+                <div id="closePopUp" class="popUp__card__close-btn"><i class="far fa-times-circle"></i></div>
                 
-                <div class="popUp__card">
-                  <div class="popUp__card__close-btn"><i class="far fa-times-circle"></i></div>
-                  <span class="popUp__card__brand"><i class="fab fa-cc-visa"></i></span>
+                <div id="popUpCard" class="popUp__card">
+                  
+                  <span class="popUp__card__brand"><i class="fab"></i></span>
                   <form class="popUp__card__form" action="">
                     <label for="cardName" class="card-form__name">CARDHOLDER NAME</label>
                     <input type="text" id="cardName" class="card-form__input" name="name" placeholder="Jane Doe">
@@ -112,9 +113,10 @@
                     <input type="number" id="cardDate" class="card-form__input" name="date" placeholder="12 / 31">
                     <label for="cardName" class="card-form__name">CVC</label>
                     <input type="password" id="cardCVC" class="card-form__input" name="CVC" placeholder="1234">
-                    
+                    <button type="submit" id="cardSubmit" name="submit-card" class="pay-btn__btn card-form__submit-card" >confirm</button>
                   </form>
                 </div>
+                
               </div>
 
            </section>

@@ -157,6 +157,18 @@ a:visited {
         }
     }
 
+.btn-inactive {
+    cursor: not-allowed;
+    background: gray;
+    opacity: .6;
+}
+.btn-inactive:hover {
+    background: gray;
+    color: tomato;
+}
+
+
+
 .popUp {
     position: absolute;
     top: 0;
@@ -179,14 +191,21 @@ a:visited {
         padding: 25px;
         // @include responsive-box(60%);
         border-radius: 10px;
-        background: radial-gradient(at bottom left, #F07CC4 20%, #FF2A6B 100%);
+        // background: radial-gradient(at bottom left, #F07CC4 20%, #FF2A6B 100%);
         box-shadow: 3px 3px 15px rgba(0,0,0,0.6);
 
         &__close-btn {
-            position: relative;
-            top: calc(-60px - 1rem);
-            text-align: right;
+            position: absolute;
+            display: inline-block;
+            top: 70px;
+            right: 20px;
             font-size: 2rem;
+            cursor: pointer;
+        }
+
+        &__close-btn:hover {
+            color: tomato;
+            opacity: .9;
         }
 
         &__brand {
@@ -207,6 +226,9 @@ a:visited {
     }
 }
 
+.popUp-close {
+    display: none;
+}
 
 .card-form {
     &__name{
@@ -266,6 +288,14 @@ a:visited {
         width: 60%;
         order: 2;
     
+    }
+
+    &__submit-card {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 30px;
     }
 
 }
