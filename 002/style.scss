@@ -232,12 +232,24 @@ a:visited {
 
 .card-form {
     &__name{
-        
+        position: relative;
         font-size: .7rem ;
         font-weight: 500;
         color: $base-color;
         margin-bottom: 2px;
     }
+
+    &__name::after{
+        content:"";
+        display: block;
+        position: absolute;
+        top: calc(1rem + 3px);
+        right: 10px;
+        width:  20px;
+        height: 20px;
+        // background: url(img/check-solid.svg); controlled by script.js
+    }
+
 
 
 
@@ -263,8 +275,18 @@ a:visited {
         flex-basis: 100%;
         margin-right: 30%;
     }
+
+    &__name:nth-child(1){
+        flex-basis: 100%;
+        margin-right: 30%;
+    }
+
     &__input:nth-child(4) {
         margin-bottom: 20px;
+        flex-basis: 100%;
+    }
+
+    &__name:nth-child(3){
         flex-basis: 100%;
     }
 

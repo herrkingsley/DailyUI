@@ -366,10 +366,21 @@ a:visited {
 }
 
 .checkout .card-form__name {
+  position: relative;
   font-size: .7rem;
   font-weight: 500;
   color: #3E3C41;
   margin-bottom: 2px;
+}
+
+.checkout .card-form__name::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: calc(1rem + 3px);
+  right: 10px;
+  width: 20px;
+  height: 20px;
 }
 
 .checkout .card-form__input {
@@ -395,8 +406,19 @@ a:visited {
   margin-right: 30%;
 }
 
+.checkout .card-form__name:nth-child(1) {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  margin-right: 30%;
+}
+
 .checkout .card-form__input:nth-child(4) {
   margin-bottom: 20px;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+.checkout .card-form__name:nth-child(3) {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
 }

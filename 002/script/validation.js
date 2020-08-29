@@ -71,7 +71,7 @@ validateCVC = () => {
 
 function checkForm(){
     const check = [];
-    check.push( markInput(validateName(cardName)) );
+    check.push( markInput(validateName(cardName)[0]));
     check.push( markInput(validateNumber()) );
     check.push( markInput(validateDate()) );
     check.push( markInput(validateCVC()) );
@@ -86,6 +86,8 @@ function checkForm(){
 
 function markInput(boolean){
     if(boolean){
+        // background: url(img/check-solid.svg);
+        
         // console.log("this is true");
         return true;
     }else {
