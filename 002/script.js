@@ -20,6 +20,11 @@ function closePopup(){
   cardBrand.classList.toggle(cardBrand.classList[1]);
 }
 
+function submitGranted(){
+  payBtn.classList.remove("btn-inactive");
+  closePopup();
+}
+
 toggelTab.forEach(element => {
     element.addEventListener("click", () =>{
         element.nextElementSibling.classList.toggle("collaps");
@@ -58,8 +63,10 @@ for (var i = 0; i < cardBtns.length; i++) {
 
 cardSubmit.addEventListener("click", (event) =>{
   event.preventDefault();
-  payBtn.classList.remove("btn-inactive");
-  closePopup();
+  if(checkForm()) {
+    submitGranted()
+  }
+
   });
 
 

@@ -71,27 +71,36 @@ validateCVC = () => {
 
 function checkForm(){
     const check = [];
-    check.push( markInput(validateName(cardName)[0]));
-    check.push( markInput(validateNumber()) );
-    check.push( markInput(validateDate()) );
-    check.push( markInput(validateCVC()) );
+    check.push( markInput(validateName(cardName), check));
+    check.push( markInput(validateNumber(), check) );
+    check.push( markInput(validateDate(), check) );
+    check.push( markInput(validateCVC(), check) );
     
+
     if(check.indexOf(false) < 0){
-        console.log("All is great")
+        // console.log("All is great");
+        return true;
     } else {
-        console.log("no go")
+        // console.log("no go");
+        return false;
     }
    
 }
 
-function markInput(boolean){
+function markInput(boolean, num){
+    const elements = document.querySelectorAll("#popUpCard form label");
+    var number = num.length;
+
     if(boolean){
-        // background: url(img/check-solid.svg);
-        
-        // console.log("this is true");
+        elements[number].classList.remove("wronInput");
+        elements[number].classList.add("correctInput");
+ 
         return true;
     }else {
-        // console.log("this is NOT true");
+ 
+        elements[number].classList.remove("correctInput");
+        elements[number].classList.add("wronInput");
+        
         return false;
     }
 }

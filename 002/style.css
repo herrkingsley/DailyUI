@@ -373,16 +373,6 @@ a:visited {
   margin-bottom: 2px;
 }
 
-.checkout .card-form__name::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: calc(1rem + 3px);
-  right: 10px;
-  width: 20px;
-  height: 20px;
-}
-
 .checkout .card-form__input {
   font-size: 1rem;
   font-weight: 600;
@@ -458,6 +448,27 @@ a:visited {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   margin-top: 30px;
+}
+
+.checkout .correctInput::after,
+.checkout .wronInput::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: calc(1rem + 3px);
+  right: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+.checkout .correctInput::after {
+  background: url(img/check-solid.svg);
+  background-repeat: no-repeat;
+}
+
+.checkout .wronInput::after {
+  background: url(img/times-solid.svg);
+  background-repeat: no-repeat;
 }
 
 .checkout ::-webkit-input-placeholder {
