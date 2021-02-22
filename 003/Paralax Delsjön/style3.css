@@ -4,10 +4,16 @@
     margin: 0;
     padding: 0;
 }
+h1, h2, h3, h4, h5, p, a {
+    font-family: 'Montserrat', sans-serif;
+      color: white;
+}
 
 section {
     position: relative;
+    overflow: hidden;
 }
+
 
 #bgImg {
     height: calc(100vw * 2.2);
@@ -25,14 +31,14 @@ section {
 
   }
 
-
-  #title {
+/*----------------------------------------------
+## Text elements
+/----------------------------------------------*/
+#title {
       position: absolute;
       top: calc(100vw * 0.10);
       left: 50%;
       transform: translateX(-50%);
-      font-family: 'Montserrat', sans-serif;
-      color: white;
       text-align: center;
       text-shadow: -1px 1px 6px rgba(0,0,0,.3);
       opacity: 1;
@@ -40,14 +46,36 @@ section {
       text-transform: uppercase;
 
     }
-    #title h1 { 
+#title h1 { 
         font-weight: 300;
         font-size: 8vw;  
     }
-    #title h3 {
+#title h3 {
         font-weight: 300;
         font-size: 3.5vw;  
     }
+
+#desc {
+    position: absolute;
+    top: calc(100vw * .6);
+    left: 50%;
+    transform: translateX(-50%) scale(.8); 
+    /* opacity: .2; */
+    transition: all  2000ms ease-in-out;
+      
+      
+      
+}
+
+#desc p {
+    color: transparent;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.0);
+    transition: all  2000ms ease-in-out;
+}
+
+/*----------------------------------------------
+## Graphical elements
+/----------------------------------------------*/
 
     #waterlevel {
         position: absolute;
@@ -69,6 +97,10 @@ section {
 
       /* background: tomato; */
   }
+
+/*----------------------------------------------
+## Media Queries
+/----------------------------------------------*/
 
   @media screen and (max-width: 1000px) {
     #bgImg {
