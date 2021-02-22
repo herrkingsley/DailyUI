@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  width: 400px;
+  box-sizing: border-box;
+  
+}
+.wrapper {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tri {
+  width:200px;
+  height:250px;
+  background:tomato;
+  border: solid 4px yellow;
+
+  
+
+}
+
+p {
+  padding:  1.5em;
+}
+
+
+
+.triangel_l{
+  background: url("https://scontent-arn2-2.cdninstagram.com/v/t51.2885-15/e35/15802065_404726533203744_3504054888122286080_n.jpg?_nc_ht=scontent-arn2-2.cdninstagram.com&_nc_cat=100&_nc_ohc=tkc-mHPuWHkAX9mdY_u&oh=33008470e07e4663e80abc92bffeaba5&oe=5EB47B6C");
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(1% 0, 0 0, 0 100%, 1% 100%, 100% 50%);
+  transition: clip-path, width, opacity 500ms ease-in-out 0ms, 500ms;
+  margin-right: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icn {
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 50%;
+  margin-right: 3em;
+}
+
+.triangel_l p{
+  font-family: arial;
+  font-size: 1em;
+  color: white;
+  display: none;
+  opacity: 0;
+}
+
+.triangel_r{
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%, 0% 50%);
+  transition: width 500ms ease-in-out;
+  margin-left: 2px;
+}
+
+.triangel_l:hover {
+  clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%, 100% 50%);
+  width: 400px;
+  z-index: 100;
+}
+
+.triangel_l:hover + .triangel_r {
+  width: 0px;
+
+}
+
+.triangel_l:hover p {
+  display: inline;
+  opacity: 1;
+
+}
+
+
+
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <div class="triangel_l tri">
+    <div class="icn"></div>
+    <p>
+        Klippning drop-in......250kr <br>
+        Klippning..............350kr</p>
+  </div>
+   <div class="triangel_r tri">
+  </div>
+</div>
+
+</body>
+</html>
+

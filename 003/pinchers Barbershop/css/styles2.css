@@ -1,0 +1,722 @@
+
+/* font-family: 'Nunito', sans-serif;
+font-family: 'Libre Baskerville', serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Roboto', sans-serif; */
+
+/*
+-----------------Base Rules --------------------
+These are styles of the main website elements
+– body, input, button, ul, ol, etc.
+*/
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  /*
+  ----------------- Pseudo-Rules ------------------
+  ::after, :first-child
+  */
+  
+  /*
+  ----------------- Layout Rules ------------------
+  Here are the styles of global elements,
+  the size of the cap, footer, sidebar, etc.
+  */
+  
+  .mainwrapper {
+    margin: 0 auto;
+  }
+  
+  .mainHeader,
+  .burgerMenu {
+    display: flex;
+  }
+  
+  .mainHeader {
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+  
+  /* .mainHeader__logo,
+  .burgerMenu {
+    flex: 1;
+  } */
+  
+  .mainHeader__logo {
+    margin: auto;
+    width: 70%;
+    max-width: 300px;
+    padding-bottom: 10px;
+  
+  }
+  
+  
+  .burgerMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    margin-right: 5%;
+    position: relative;
+    cursor: pointer;
+    transition: 500ms ease-in-out;
+  }
+  
+  .burgerMenu::before,
+   .burgerMenu::after{
+    content: "";
+    display: block;
+    transition: 500ms ease-in-out;
+  
+  }
+  
+  .burgerMenu.open::before,
+  .burgerMenu.open::after{
+    height: 12px;
+    width:30px;
+    background: green;
+    position: absolute;
+  }
+  
+  .burgerMenu.open::before {
+    top: 10px;
+    -webkit-clip-path: polygon(50% 100%, 0 0, 100% 0);
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+  }
+  
+  .burgerMenu.open::after {
+    bottom: 10px;
+    -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+  
+  .burgerMenu__icn {
+    z-index: 1;
+    width: 40px;
+    height: 5px;
+    background: #FFCB08;
+    border-radius: 5px;
+    transition: 250ms ease-in-out;
+  }
+  .burgerMenu__icn::before,
+  .burgerMenu__icn::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 5px;
+    border-radius: 5px;
+    transition: 250ms ease-in-out;
+  }
+  
+  .burgerMenu__icn::before {
+    transform:  translateY(-12px);
+    background: #FF5408;
+  }
+  .burgerMenu__icn::after {
+    transform:  translateY(12px);
+    background: #058A00;
+  }
+  
+  .main-nav {
+    flex-basis: 90%;
+    display: flex;
+    max-height: 0;
+    transition-property: max-height;
+    transition-duration: 500ms;
+    transition-timing-function: ease-in-out;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+  
+  .main-nav.open {
+    transition-property: max-height;
+    /* transition-duration: 500ms; */
+    transition-timing-function: ease-in-out;
+    height: auto;
+    max-height: 100vh;
+  
+  
+  }
+  
+  .main-nav__list {
+    list-style: none;
+      margin: .5em;
+  }
+  
+  .main-nav__list:last-child {
+    margin-bottom: 2em;
+  }
+  
+  .main-nav__link {
+      display: block;
+      text-decoration: none;
+      color: white;
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.2em;
+  
+      /* font-family: 'Nunito', sans-serif;
+      font-family: 'Libre Baskerville', serif;
+      font-family: 'Raleway', sans-serif;
+      font-family: 'Roboto', sans-serif; */
+  }
+  
+  
+  /*----------HERO--------------*/
+  
+  .hero {
+    text-align: center;
+    background-image:
+    linear-gradient(180deg, rgba(0,0,0,0.58) 0%, rgba(44,67,4,0.5) 62%, rgba(33,113,0,1) 200%),
+    url("../img/startbg3.jpg");
+    background-position: top 0px left 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 1px;
+    margin-bottom: -20vw;
+  }
+  
+  
+  .hero h1 {
+    margin-top: 30vw;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 10vw;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5em;
+    font-weight: 400;
+    color: white;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+  
+  }
+  
+  /*------ CARDS----------*/
+  .cardWrapper {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+  
+  }
+  
+  .card-l,
+  .card-r,
+  .card_cont-l,
+  .card_cont-r {
+    display: flex;
+    align-items: center;
+  }
+  
+  .card-l,
+  .card-r {
+    height: 40vw;
+    max-height: 300px;
+    background: #FFCB08;
+    width: 50%;
+    /* transition-property: width, clip-path; */
+    transition-duration: 200ms;
+  }
+  
+  .card-l {
+    margin-right: -1px;
+    -webkit-clip-path: polygon(0 0, 100% 47%, 100% 53%, 0 100%, 0 100%, 0 0);
+    clip-path: polygon(0 0, 100% 47%, 100% 53%, 0 100%, 0 100%, 0 0);
+  }
+  
+  
+  .card-r {
+    margin-left: -1px;
+    -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%, 0 53%, 0 47%);
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%, 0 53%, 0 47%);
+  }
+  
+  .card_cont-l,
+  .card_cont-r {
+    flex-direction: column;
+    justify-content:space-around;
+    height: 90%;
+    width: 100%;
+    transition-duration: 180ms;
+  
+    transition-timing-function: ease-in-out;
+  }
+  
+  
+  .card_cont-l {
+    background: url("../img/beard4.jpg") center/cover no-repeat;
+    background-color: #2D2D2D;
+    background-blend-mode: multiply;
+    margin-right: 3vw;
+    -webkit-clip-path: polygon(0% 0%, 0 0, 100% 50%, 0 100%, 0 100%);
+    clip-path: polygon(0% 0%, 0 0, 100% 50%, 0 100%, 0 100%);
+    transition-property: width, clip-path, margin-right;
+  
+  }
+  
+  .card_cont-r {
+    background: url("../img/haricut2.jpg") center/cover no-repeat;
+    background-color: #2D2D2D;
+    background-blend-mode: multiply;
+    margin-left: 3vw;
+    -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%, 0% 50%);
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%, 0% 50%);
+    /* transition-property: width, clip-path, margin-left; */
+    transition-property: all;
+  }
+  
+  .card__icn {
+    /* display: none; */
+    width: 15vw;
+  }
+  
+  .card_cont-r .card__icn {
+    margin-right: auto;
+    margin-left: 50%;
+  }
+  
+  .card_cont-l .card__icn {
+    margin-right: 50%;
+    margin-left: auto;
+  }
+  
+  .card__info {
+    display: none;
+    width: 60%;
+  }
+  
+  .card__info li {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .card__info li p,
+  .card__info li span {
+    color: white;
+    font-size: .8em;
+    line-height: 1.5em;
+    font-family: 'Raleway', sans-serif
+  }
+  
+  .dotted {
+    flex: 1;
+    border-bottom: dotted 2px;
+    margin: 0 10px 5px 10px;
+  }
+  
+  
+  footer {
+    background-color: #FFCB08;
+    padding: 1em;
+  }
+  
+  .socialMedia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .sMedia__icn {
+    padding: 1em .5em;
+  }
+  
+  address {
+    text-align: center;
+    font-size: .8em;
+    padding-bottom: 1.5em;
+  }
+  
+  
+  
+  
+  /*--------------main content-----------------*/
+  .main__desc {
+    text-align: center;
+    background-image:
+    linear-gradient(180deg, rgba(33,113,0,1) -100%, rgba(44,67,4,0.5) 62%, rgba(0,0,0,0.58) 100%),
+    /* linear-gradient(180deg, rgba(0,0,0,0.58) 0%, rgba(44,67,4,0.5) 62%, rgba(33,113,0,1) 200%), */
+    url("../img/barbershop2.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: -20vw;
+  }
+  
+  .card__icn__link {
+    display: inline-block;
+    margin: 10vw 0 100px;
+  }
+  
+  
+  /*
+  ----------------- Modules Rules ---------------------
+  Blocks that can be used multiple times on a single page.
+  */
+  
+  .btn {
+    border: solid 2px #FFCB08;
+    border-radius: 100px;
+    background: none;
+    padding: .3em 1.5em;
+    margin-bottom: 30vw;
+    cursor: pointer;
+  
+    color: white;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.2em;
+    text-transform: uppercase;
+  
+  
+  }
+  
+  .content {
+    background-color: #2D2D2D;
+    padding-top: 2em;
+  }
+  
+  .content__p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1em;
+    line-height: 1.2em;
+    color: white;
+    padding: 0 2em 50px;
+    margin: auto;
+    max-width: 490px;
+  }
+  
+  .content__link {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .content__link:hover {
+    color: #FFCB08;
+    text-decoration:underline;
+  }
+  
+  
+  .col_gray {
+    color: #2D2D2D;
+  }
+  .bg_gray {
+    background-color: #2D2D2D;
+  }
+  
+  /*
+  ----------------- Event Rules ---------------------
+  Blocks that can be used multiple times on a single page.
+  */
+  
+  .burgerMenu.open .burgerMenu__icn{
+    transform: translateX(-50px);
+    background: transparent;
+  }
+  
+  .burgerMenu.open .burgerMenu__icn::before{
+    transform: rotate(45deg) translate(35px, -35px);
+  }
+  
+  .burgerMenu.open .burgerMenu__icn::after{
+    transform: rotate(-45deg) translate(35px, 35px);
+  }
+  
+  .burgerMenu.open .burgerMenu__icn::before,
+  .burgerMenu.open .burgerMenu__icn::after {
+    background: #FFCB08;
+  }
+  .burgerMenu__icn {
+  
+  }
+  
+  
+  
+  
+  
+  /*-----------------------SLIDESHOW W3 TEMPLATE------------------*/
+  
+  /* Slideshow container */
+  .slideshow-container {
+    /* background-color: white; */
+    width: 90%;
+    max-width: 700px;
+    position: relative;
+    margin: auto;
+    padding-top: 3em;
+    padding-bottom: 2em;
+  }
+  
+  /* Hide the images by default */
+  
+  
+  .mySlides {
+    display: none;
+  
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: .5em 2px 0;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+  
+  /*------------------------------------------------------------------
+  
+                        MEDIA QUERIES
+  
+  --------------------------------------------------------------------*/
+  
+  
+  @media only screen and (min-width: 768px)  {
+  
+  /* * {
+    border: solid 1px red;
+  } */
+  
+  .burgerMenu {
+    display: none;
+  }
+  
+    .main-nav {
+      max-height: 100vh;
+      flex-direction: row;
+      margin-bottom: 1em;
+    }
+  
+    .main-nav__list:last-child {
+      margin: 0 2em;
+    }
+  
+    /* .hero h1 {
+      margin-top: 15%;
+      margin-bottom: 50px;
+    } */
+  
+    .btn {
+      margin-bottom: 30vw;
+    }
+  
+    .hero {
+      margin-bottom: -150px;
+    }
+  
+    .main__desc {
+      margin-top: -150px;
+    }
+  
+    .content__p {
+      margin: auto;
+      width: 70%;
+      font-size: 1.2em;
+      line-height: 1.5em;
+    }
+  
+  }
+  
+  @media only screen and (max-width: 967px) {
+  
+    .card:hover {
+     /* height: 100%; */
+     margin-bottom: 20%;
+     margin-top: 20%;
+     height: auto;
+     transition: 500ms ease-in-out;
+    }
+  
+    .card-l:hover
+     {
+      -webkit-clip-path: polygon(100% 0, 100% 47%, 100% 53%, 100% 100%, 0 100%, 0 0);
+      clip-path: polygon(100% 0, 100% 47%, 100% 53%, 100% 100%, 0 100%, 0 0);
+      width: 100%;
+  
+    }
+  
+  
+    .card-l:hover > .card_cont-l {
+      -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 50%, 100% 100%, 0% 100%);
+      clip-path: polygon(0% 0%, 100% 0, 100% 50%, 100% 100%, 0% 100%);
+      width: 100%;
+      margin-right: 0px;
+    }
+  
+    .card:hover .card__icn {
+      width: 10vw;
+      margin-top: 1.5em;
+      margin-bottom: 1.5em;
+    }
+    .card:hover .card__info {
+      display:block;
+      color: white;
+      margin-bottom: 2em;
+    }
+  
+  
+    .card-r:hover
+     {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 53%, 0 47%);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 53%, 0 47%);
+      width: 100%;
+    }
+  
+    .card-r:hover > .card_cont-r {
+      -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%, 0% 50%);
+      clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%, 0% 50%);
+      width: 100%;
+      margin-left: 0px;
+    }
+  
+  
+  }
+  
+  
+  
+  @media screen and (min-width: 968px)  {
+  
+  .mainwrapper {
+    max-width: 1050px;
+  }
+  #b .card-r{
+    width: 50%;
+  }
+  
+  .card-l {
+    margin-right: -1px;
+    -webkit-clip-path: polygon(60% 0, 100% 47%, 100% 53%, 60% 100%, 0 100%, 0 0);
+    clip-path: polygon(60% 0, 100% 47%, 100% 53%, 60% 100%, 0 100%, 0 0);
+  }
+  
+  .card_cont-l {
+    -webkit-clip-path: polygon(0% 0%, 60% 0, 100% 50%, 60% 100%, 0% 100%);
+    clip-path: polygon(0% 0%, 60% 0, 100% 50%, 60% 100%, 0% 100%);
+  }
+  
+  
+  .card-r {
+    margin-left: -1px;
+    -webkit-clip-path: polygon(40% 0, 100% 0, 100% 100%, 40% 100%, 0 53%, 0 47%);
+    clip-path: polygon(40% 0, 100% 0, 100% 100%, 40% 100%, 0 53%, 0 47%);
+  }
+  
+  .card_cont-r {
+    -webkit-clip-path: polygon(40% 0, 100% 0, 100% 100%, 40% 100%, 0 50%, 0 50%);
+    clip-path: polygon(40% 0, 100% 0, 100% 100%, 40% 100%, 0 50%, 0 50%);
+  }
+  
+  .card_cont-l,
+  .card_cont-r {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .card {
+  
+  }
+  .card__icn {
+    width: 70px;
+  }
+  
+  .card_cont-l .card__icn {
+    margin-right: 10%;
+    margin-left: 0px;
+    order: 2;
+  }
+  
+  .card_cont-r .card__icn {
+    margin-right: 0px;
+    margin-left: 10%;
+  }
+  
+  
+  
+  .card__info {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+  }
+  
+  .card__info li {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .card__info li p,
+  .card__info li span {
+    color: white;
+  }
+  
+  
+  }
+  

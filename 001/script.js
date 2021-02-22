@@ -6,7 +6,7 @@ const dropDown = document.getElementById('signedUp');
 
 
 btn.addEventListener('click', () => {
-    if(validateForm() === 3){
+    if(validateForm() === 3){ // defult 3
         animLetter();
         renderSuccsess()
         animSuccsess();

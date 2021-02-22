@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    position: relative;
+}
+
+#bgImg {
+    height: calc(100vw * 2.2);
+    /* height: 8000px; */
+    width: 100%;
+    position: relative;
+
+    /* position: relative;
+    width: 100%;
+    top: 0;
+    height: 250vw;
+    display: block; */
+    background: url(img/bg2.png)  50% top no-repeat;
+    background-size: 100% auto;
+
+  }
+
+
+  #title {
+      position: absolute;
+      top: calc(100vw * 0.10);
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Montserrat', sans-serif;
+      color: white;
+      text-align: center;
+      text-shadow: -1px 1px 6px rgba(0,0,0,.3);
+      opacity: 1;
+      transition: opacity 200ms;
+      text-transform: uppercase;
+
+    }
+    #title h1 { 
+        font-weight: 300;
+        font-size: 8vw;  
+    }
+    #title h3 {
+        font-weight: 300;
+        font-size: 3.5vw;  
+    }
+
+    #waterlevel {
+        position: absolute;
+        top: calc(100vw * 0.281);
+        width: 100%;
+        height: calc(100vw * 0.533);
+        background: url(img/Waterlevel3.png)  50% top no-repeat;
+        background-size: 100% auto;
+        /* opacity: .5; */
+        /* transform: scaleY(.3); transform-origin: 0 0; */
+      }
+      
+
+  #branch {
+      position: absolute;
+      top: calc(100vw * 0.10);
+      transform: translateY(-50%);
+      width: 40vw;
+
+      /* background: tomato; */
+  }
+
+  @media screen and (max-width: 1000px) {
+    #bgImg {
+        height: calc(100vw * 8);
+        background-size: auto 100%;
+    }
+
+    #branch {
+        width: 50vw;
+        top: calc(100vw * .9);
+    }
+
+    #title {
+        top: calc(100vw * .4);
+    }
+    #title h1 { 
+        font-size: 15vw;  
+    }
+    #title h3 {
+        font-size: 8vw;  
+    }
+    #waterlevel {
+        top: calc(100vw * 1.015);
+    }
+
+    
+  }

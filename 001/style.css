@@ -289,8 +289,11 @@ input[type=number] {
 }
 
 @keyframes letterFly {
+    /* 0%{transform:  translate(0px, 0px)}
+    100%{transform: rotateZ(20deg) translate(150px, -730px); opacity: 0;} */
+
     0%{transform:  translate(0px, 0px)}
-    100%{transform: rotateZ(20deg) translate(150px, -730px); opacity: 0;}
+    100%{transform: rotateZ(170deg) translate(150px, -730px); opacity: 0;}
 }
 
 @keyframes dropDown {
