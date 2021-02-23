@@ -13,14 +13,21 @@ window.addEventListener('scroll',  function (e) {
     const branch = document.getElementById('branch');
     const title = document.getElementById('title');
     const waterLevel = document.getElementById('waterlevel');
+    const particles1 = document.getElementById('particles1');
+
     // branch.style.top = (scrolled * 2.2) + 'px';
 
+    renderDesc();
+    renderFishTitle();
+    renderGadda();
     // Other variables
     
 
     branch.style.marginTop =  - scrolled * 0.2 + 'px';
     if (vw > 1000) {
         title.style.marginTop =  scrolled * 0.6 + 'px';
+        particles1.style.marginTop =  scrolled * 1.5 + 'px';
+        particles1.style.marginLeft =  scrolled * 0.3 + 'px';
         
         
     } else {
@@ -38,8 +45,10 @@ window.addEventListener('scroll',  function (e) {
     if (scrolled > 300) {
         scrollFade(300, 500, title, 0.2);
         
+        
     } else {
         title.style.opacity = 1;
+        
     }
 
 
@@ -52,27 +61,49 @@ window.addEventListener('scroll',  function (e) {
     function renderDesc() {
         let desc = document.getElementById('desc');
         let descP = document.querySelectorAll('#desc > p');
-        desc.style.marginTop =  scrolled * 0.09 + 'px';
+        desc.style.marginTop =  scrolled * 0.4 + 'px';
 
-        if (vw > 1000 && scrolled > 300 && scrolled < 1000) {    
+        if (vw > 1000 && scrolled > 300 && scrolled < 800) {    
             desc.style.transform = "translateX(-50%) scale(1)";
             descP.forEach(element => {
-                element.style.color = "transparent";
-                element.style.textShadow = "0 0 0px rgba(255, 255, 255, 1)";
+                textBlurFadeIn(element, 2, true);
             });
-            
-            
-            
         } else {
-            // desc.style.transform = "translateX(-50%) scale(.8)";
             descP.forEach(element => {
-                element.style.color = "transparent";
-                element.style.textShadow = "0 0 10px rgba(255, 255, 255, 0)";
+                textBlurFadeIn(element, 2, false);
             });
         }
         
     }
-    renderDesc();
+
+
+    function renderFishTitle() {
+        const fishTitle = document.getElementById('fish-title');
+        fishTitle.style.marginTop =  scrolled * 0.09 + 'px';
+
+        if (vw > 1000 && scrolled > 300 && scrolled < 1300) {    
+            textBlurFadeIn(fishTitle, 2, true);  
+        } else {
+            textBlurFadeIn(fishTitle, 2, false);
+        }
+        
+    }
+
+    function renderGadda() {
+        const GaddaCont = document.getElementById('gadda-container');
+        const Gadda = document.getElementById('gadda');
+        GaddaCont.style.top =  scrolled * 0.15 + 'px';
+
+        if (vw > 1000 && scrolled > 1000 && scrolled < 1300) { 
+            containerBlurFadeIn(GaddaCont, 1, true);   
+            fromSide(Gadda, 2, 'left'); 
+
+        } else {
+            containerBlurFadeIn(GaddaCont, .5, false);
+            
+        }
+        
+    }
 
     function scrollFade(sStart, sEnd, e, oEnd) // Function takes arguments; when 
     {
@@ -85,12 +116,49 @@ window.addEventListener('scroll',  function (e) {
 
     }
 
+/*----------------------------------------------
+## Animation functions
+/----------------------------------------------*/
+
+    function textBlurFadeIn(element, lenght, bool) {
+        if(bool == true) {
+            element.style.animationName = "blurFadeIn";
+        } else {
+            element.style.animationName = "blurFadeOut";
+        }
+        element.style.animationDuration = `${lenght}s`;
+        element.style.animationTimingFunction = 'ease-in-out';
+        element.style.animationFillMode = 'forwards';
+
+    }
+
+    function containerBlurFadeIn(element, lenght, bool) {
+        if(bool == true) {
+            element.style.animationName = "blurInContainer, opacityIn";
+        } else {
+            element.style.animationName = "blurOutContainer, opacityOut";
+        }
+        element.style.animationDuration = `${lenght}s`;
+        element.style.animationTimingFunction = 'ease-in-out';
+        element.style.animationFillMode = 'forwards';
+
+    }
+
+    function fromSide(element, lenght, left) {
+        if(left == 'left') {
+            element.style.animationName = "fromLeft";
+        } else {
+            element.style.animationName = "fromRigth";
+        }
+        element.style.animationDuration = `${lenght}s`;
+        element.style.animationTimingFunction = 'ease-in-out';
+        element.style.animationFillMode = 'forwards';
+
+    }
+
+
+    
+    
+
 
 })
-
-function showCoords(event) {
-    var x = event.clientX;
-    var y = event.clientY;
-    var coords = "X coords: " + x + ", Y coords: " + y;
-    alert(coords);
-}

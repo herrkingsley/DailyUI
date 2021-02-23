@@ -14,23 +14,6 @@ section {
     overflow: hidden;
 }
 
-
-#bgImg {
-    height: calc(100vw * 2.2);
-    /* height: 8000px; */
-    width: 100%;
-    position: relative;
-
-    /* position: relative;
-    width: 100%;
-    top: 0;
-    height: 250vw;
-    display: block; */
-    background: url(img/bg2.png)  50% top no-repeat;
-    background-size: 100% auto;
-
-  }
-
 /*----------------------------------------------
 ## Text elements
 /----------------------------------------------*/
@@ -57,25 +40,50 @@ section {
 
 #desc {
     position: absolute;
-    top: calc(100vw * .6);
+    top: calc(100vw * .5);
     left: 50%;
     transform: translateX(-50%) scale(.8); 
-    /* opacity: .2; */
-    transition: all  2000ms ease-in-out;
+    transition: margin-top  1000ms linear;
       
       
       
 }
 
-#desc p {
+#desc p, #fish-title
+ {
     color: transparent;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.0);
-    transition: all  2000ms ease-in-out;
+}
+
+#fish-title
+ {
+    position: absolute;
+    top: calc(100vw * .9);
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    text-transform: uppercase;
+    transition: margin-top  3000ms linear;
 }
 
 /*----------------------------------------------
 ## Graphical elements
 /----------------------------------------------*/
+
+#bgImg {
+    height: calc(100vw * 2.2);
+    /* height: 8000px; */
+    width: 100%;
+    position: relative;
+
+    /* position: relative;
+    width: 100%;
+    top: 0;
+    height: 250vw;
+    display: block; */
+    background: url(img/bg2.png)  50% top no-repeat;
+    background-size: 100% auto;
+
+  }
 
     #waterlevel {
         position: absolute;
@@ -97,6 +105,96 @@ section {
 
       /* background: tomato; */
   }
+  .particles {
+        width: 100vw;
+        height: calc(100vw * 8);
+        position: absolute;
+        top: calc(100vw * 0.55);
+        overflow: hidden;
+  }
+
+  #particles1 {
+    position: absolute;
+    top: -1000px;
+    left: -50%;
+    transform: translateY(-50%);
+    width: 200vw;
+    transition: all  10000ms ease-out;
+    z-index: 100;
+
+    /* background: tomato; */
+  }
+
+  #gadda-container {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 50vh;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    /* animation-name: blurInContainer, opacityIn ;
+    animation-duration: 4s;
+    animation-fill-mode: forwards; */
+    /* transition: margin-top  3000ms linear; */
+    /* border: 1px solid red; */
+    z-index: 90;
+  }
+  #gadda-container p {
+      max-width: 45%;
+  }
+
+
+  #gadda {
+      width: 20vw;
+      position: relative;
+      /* top: calc(100vw * 1.15); */
+      /* left: 50%; */
+      
+  }
+
+
+
+/*----------------------------------------------
+## Animations
+/----------------------------------------------*/
+@keyframes opacityIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@keyframes opacityOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+
+@keyframes blurInContainer {
+    from {filter: blur(10px);}
+    to {filter: blur(0px);}
+}
+@keyframes blurOutContainer {
+    from {filter: blur(0px);}
+    to {filter: blur(10px);}
+}
+
+
+@keyframes blurFadeIn {
+    from {text-shadow: 0 0 10px rgba(255, 255, 255, 0);}
+    to {text-shadow: 0 0 0px rgba(255, 255, 255, 1);}
+}
+@keyframes blurFadeOut {
+    from {text-shadow: 0 0 0px rgba(255, 255, 255, 1);}
+    to {text-shadow: 0 0 10px rgba(255, 255, 255, 0);}
+}
+
+@keyframes fromLeft {
+    from {left: 50%; margin-top: 10vw;}
+    to {left: 0%; margin-top: 0vw;}
+}
+@keyframes fromRight {
+    from {right: 70%; margin-top: 10vw;}
+    to {right: 50%; margin-top: 0vw;}
+}
 
 /*----------------------------------------------
 ## Media Queries
