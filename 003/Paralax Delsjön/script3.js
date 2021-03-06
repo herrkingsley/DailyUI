@@ -61,12 +61,20 @@ window.addEventListener('scroll',  function (e) {
     function renderDesc() {
         let desc = document.getElementById('desc');
         let descP = document.querySelectorAll('#desc > p');
-        desc.style.marginTop =  scrolled * 0.4 + 'px';
+        
 
-        if (vw > 1000 && scrolled > 300 && scrolled < 800) {    
+        if (vw > 1000 && scrolled > 300 && scrolled < 700) {    
             desc.style.transform = "translateX(-50%) scale(1)";
             descP.forEach(element => {
                 textBlurFadeIn(element, 2, true);
+                desc.style.marginTop =  scrolled * 0.2 + 'px';
+            });
+
+        } else if (700 && scrolled < 900) {    
+            // desc.style.transform = "translateX(-50%) scale(1)";
+            descP.forEach(element => {
+                // textBlurFadeIn(element, 2, true);
+                // desc.style.marginTop =  scrolled * 0 + 'px';
             });
         } else {
             descP.forEach(element => {
